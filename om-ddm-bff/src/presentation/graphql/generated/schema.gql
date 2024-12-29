@@ -1,0 +1,34 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type BillingDto {
+  invoiceId: String!
+  amount: Float!
+  isConfirmed: Boolean!
+}
+
+type CreateBillingResponse {
+  success: Boolean!
+  message: String!
+}
+
+type TariffDto {
+  tariffId: String!
+  rate: Float!
+}
+
+type CreateTariffResponse {
+  success: Boolean!
+  message: String!
+}
+
+type Query {
+  getBilling(invoiceId: String!): BillingDto!
+  getTariff(tariffId: String!): TariffDto!
+}
+
+type Mutation {
+  createBilling(invoiceId: String!, amount: Float!): CreateBillingResponse!
+  createTariff(tariffId: String!, rate: Float!): CreateTariffResponse!
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package tariff_setup;
+
+service TariffSetupService {
+  rpc GetTariff (GetTariffRequest) returns (GetTariffResponse);
+  rpc CreateTariff (CreateTariffRequest) returns (CreateTariffResponse);
+}
+
+message GetTariffRequest {
+  string tariffId = 1;
+}
+
+message GetTariffResponse {
+  string tariffId = 1;
+  double rate = 2;
+}
+
+message CreateTariffRequest {
+  string tariffId = 1;
+  double rate = 2;
+}
+
+message CreateTariffResponse {
+  bool success = 1;
+  string message = 2;
+}

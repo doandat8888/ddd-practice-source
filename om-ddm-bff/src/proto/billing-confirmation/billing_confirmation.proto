@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package billing_confirmation;
+
+service BillingConfirmationService {
+  rpc GetBilling (GetBillingRequest) returns (GetBillingResponse);
+  rpc CreateBilling (CreateBillingRequest) returns (CreateBillingResponse);
+}
+
+message GetBillingRequest {
+  string invoiceId = 1;
+}
+
+message GetBillingResponse {
+  string invoiceId = 1;
+  double amount = 2;
+  bool isConfirmed = 3;
+}
+
+message CreateBillingRequest {
+  string invoiceId = 1;
+  double amount = 2;
+}
+
+message CreateBillingResponse {
+  bool success = 1;
+  string message = 2;
+}
